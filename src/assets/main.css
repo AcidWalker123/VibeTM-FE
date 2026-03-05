@@ -1,0 +1,153 @@
+/* 1. Imports & Variables */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Background: The light grey from your last 2 images */
+  --bg-color: #212121; 
+  
+  /* Card: The dark charcoal/grey container */
+  --card-bg: #323232; 
+  
+  /* Text: Muted grey for headers, white for button text */
+  --header-color: #a0a0a0;
+  --link-color: #00767d;
+  
+  /* Inputs: The light grey backgrounds for fields */
+  --input-bg: #d1d1d1;
+  --input-text: #444444;
+  
+  /* Branding: The specific teal button color */
+  --teal-primary: #00767d;
+  --teal-hover: #008e96;
+}
+
+/* 2. Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, 
+body, 
+#app, 
+#app-container {
+  background-color: var(--bg-color) !important;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* 3. Layout Container */
+#app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
+}
+
+/* 4. Typography */
+h2 {
+  font-weight: 300;
+  color: var(--header-color);
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+/* 5. The Auth Card (The "Floating" Box) */
+.auth-card {
+  background-color: var(--card-bg);
+  width: 100%;
+  max-width: 400px; /* Matches the proportions in your screenshots */
+  padding: 50px 40px;
+  border-radius: 16px;
+  
+  /* Soft, deep shadow to create the "floating" effect on the light background */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 6. Form & Inputs */
+.inner-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  width: 100%;
+  background-color: var(--input-bg);
+  border: none;
+  border-radius: 8px;
+  padding: 14px 20px;
+  margin-bottom: 15px; /* Spacing between fields */
+  
+  font-size: 1rem;
+  color: var(--input-text);
+  text-align: center;
+  outline: none;
+  transition: background-color 0.2s ease;
+}
+
+input:focus {
+  background-color: #e0e0e0;
+}
+
+input::placeholder {
+  color: #888;
+}
+
+/* 7. The Teal Pill Button */
+button {
+  background-color: var(--teal-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 50px; /* Pill shape from image */
+  padding: 12px 40px;
+  margin-top: 15px;
+  
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: var(--teal-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* 8. Toggle/Redirect Text */
+.toggle-text {
+  margin-top: 25px;
+  color: #666666; /* Muted text color for the sub-link */
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.toggle-text a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 4px;
+}
+
+.toggle-text a:hover {
+  text-decoration: underline;
+}

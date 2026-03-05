@@ -1,0 +1,26 @@
+// src/router/index.ts
+import { createRouter, createWebHistory } from 'vue-router'
+import RegisterView from '../views/RegisterView.vue'
+import LoginView from '../views/LoginView.vue'
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes: [
+    {
+      path: '/',
+      redirect: '/register' // Redirect the root to register
+    },
+    {
+      path: '/register',      // Now this matches your $route
+      name: 'register',
+      component: RegisterView
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: LoginView
+    }
+  ]
+})
+
+export default router
